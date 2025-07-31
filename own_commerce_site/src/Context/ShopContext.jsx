@@ -11,16 +11,18 @@ export const ShopContext = createContext(null);
     }
 
 const ShopContextProvider = (props) => {
+    const url = 'https://shopper-backend-ug5r.onrender.com'
+    
     const [all_product, setAll_product] = useState([])
     const [cartItems, setCartItems] = useState(getDefaultCart)
 
     useEffect(() => {
-        fetch('http://localhost:4000/allproducts')
+        fetch(`${url}/allproducts`)
             .then((res) => res.json())
             .then((data) => setAll_product(data))
 
             if (localStorage.getItem('auth-token')) {
-                fetch('http://localhost:4000/getcart', {
+                fetch(`${url}/getcart`, {
                     method: 'POST',
                     headers: {
                         Accept: 'application/form-data',
@@ -37,7 +39,7 @@ const ShopContextProvider = (props) => {
     function addToCart(itemId) {
         setCartItems((prev) => ({...prev, [itemId] : prev[itemId] + 1}))
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/addtocart', {
+            fetch(`${url}/addtocart`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -54,7 +56,7 @@ const ShopContextProvider = (props) => {
     function removeFromCart(itemId) {
         setCartItems((prev) => ({...prev, [itemId] : 0}))
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/removefromcart', {
+            fetch(`${url}/removefromcart`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -71,7 +73,7 @@ const ShopContextProvider = (props) => {
     function reduceItemFromCart(itemId) {
         setCartItems((prev) => ({...prev, [itemId] : prev[itemId] - 1}))
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/reducefromcart', {
+            fetch(`${url}/reducefromcart`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
