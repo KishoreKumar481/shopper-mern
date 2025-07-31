@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+.CartItems {
+    @apply md:mx-35 md:my-20 
+}
+.CartItemsFormatMainHr {
+    @apply hidden md:block border-[#e2e2e2] border-t-3
+}
+.CartItemsFormatMain {
+    @apply hidden md:grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] items-center pb-4 gap-5 text-[#454545] font-semibold text-base
+}
+.QuantityHeading {
+    @apply mx-6
+}
+.CartItemsFormat {
+    @apply font-medium text-sm
+}
+.CartIconProductIcon {
+    @apply h-25 pt-5
+}
+.CartItemsRemoveIcon {
+    @apply cursor-pointer w-3.5 mx-6 my-0
+}
+.CartItemsQuantity {
+    @apply bg-[#fff] border border-[#ebebeb] w-16 h-13 
+}
+.CartItemsQuantityOuter {
+    @apply flex items-center gap-3
+}
+.CartItemsQuantityOuter p{
+    @apply  text-xl cursor-pointer
+}
+.CartItemsDown {
+    @apply md:flex my-10 md:my-18 mx-6 md:mx-0
+}
+.CartItemsTotal {
+    @apply flex md:flex-1 flex-col md:mr-45 gap-4 md:gap-8
+}
+.CartItemsTotal h1{
+    @apply text-2xl font-bold 
+}
+.CartItemsTotalItem {
+    @apply flex justify-between py-2
+}
+.CheckOutButton {
+    @apply bg-[#ff5a5a] text-[#fff] py-3 cursor-pointer active:bg-[#ab3e3e] font-semibold text-sm md:text-base md:w-60 mx-10 md:mx-0 mb-10 md:mb-0
+}
+.CartItemsPromoCode {
+    @apply md:flex-1 font-medium text-sm 
+}
+.CartItemsPromoCode p {
+    @apply text-[#555]
+}
+.CartItemsPromobox {
+    @apply  mt-5 w-full
+}
+.CartItemsPromobox input {
+    @apply outline-none text-sm w-56 md:w-68 bg-[#eaeaea] py-3 pl-5
+}
+.SubmitButton{
+    @apply bg-black text-sm text-white py-3 px-8 cursor-pointer active:bg-[#424242]
+}
+.CartItemsFormatMainMobile {
+    @apply md:hidden
+}
+.ProductBoxMobile {
+    @apply mx-5 my-5
+}
+.CartItemsFormatMobile {
+    @apply flex 
+}
+.CartItemsFormatMobile img {
+    @apply w-auto h-25
+}
+.ProductBoxMobileRightName {
+    @apply text-[15px] ml-4 font-semibold
+}
+.ProductBoxMobileRightPrice {
+    @apply mt-3 ml-4 font-bold
+}
+.ProductBoxMobileRightRemove {
+    @apply flex mt-3 px-15 text-sm items-center
+}
+.ProductBoxMobileQuantity {
+    @apply flex mt-3 gap-3
+}
+.ProductBoxMobileQuantityBox {
+    @apply border px-3 rounded-sm
+}
+.ProductBoxMobileQuantityTotal {
+    @apply ml-16 font-bold
+}
+.ProductBoxMobileHr {
+    @apply mt-4 md:block border-[#e2e2e2] border-t-3
+}
+.CartItemsFormatOuter {
+    @apply hidden md:block
+}

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.RelatedProducts {
+    @apply flex flex-col items-center gap-4
+}
+.RelatedProducts h1 {
+    @apply text-[#171717] font-semibold text-2xl md:text-[44px]
+}
+.RelatedProducts hr {
+    @apply w-30 md:w-50 bg-[#252525] border-3 rounded-full
+}
+.RelatedProductsItem {
+    @apply grid grid-cols-2 md:flex mt-5 gap-4 md:gap-6 mx-5 md:mx-0
+}

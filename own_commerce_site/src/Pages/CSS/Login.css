@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+.Login {
+    @apply w-[100%] h-[75vh] md:h-[89vh] bg-[#fce3fe] p-8 md:p-20 
+}
+.LoginContainer {
+    @apply bg-white md:w-150 md:h-130 mx-auto px-5 md:px-15 py-2 pb-8 md:py-7 mt-10 md:mt-0
+}
+.LoginContainer h1 {
+    @apply my-5 text-xl md:text-3xl font-bold
+}
+.LoginContainer button {
+    @apply w-full h-10 md:h-14 bg-[#ff4141] text-white mt-5 text-lg font-medium cursor-pointer 
+}
+.LoginFields {
+    @apply flex flex-col gap-5 md:gap-8
+}
+.LoginFields input {
+    @apply border border-[#c9c9c9] text-[#5c5c5c] text-sm md:text-base px-4 md:px-5 py-2 md:py-3
+}
+.ExistingLogin {
+    @apply mt-5 text-sm md:text-base
+}
+.ExistingLogin span{
+    @apply text-[#ff4141] font-semibold cursor-pointer
+}
+.LoginAgree {
+    @apply text-[#5c5c5c] flex items-center gap-3 text-xs md:text-sm font-medium mt-3 md:mt-6
+}

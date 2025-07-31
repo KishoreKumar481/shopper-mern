@@ -1,0 +1,29 @@
+@import "tailwindcss";
+.ShopCategoryBanner {
+    @apply block md:my-8 mx-auto md:w-[83%] cursor-pointer
+}
+.ShopCategoryIndexSort {
+    @apply flex mt-4 md:my-0 mx-5 md:mx-33 justify-between items-center
+}
+.ShopCategoryIndexSort p span {
+    @apply font-bold 
+}
+.ShopCategoryIndexSort p {
+    @apply text-sm md:text-base
+}
+.ShopCategoryIndexSort span {
+    @apply text-sm md:text-base
+}
+.ShopCategorySort {
+    @apply flex rounded-full border border-[#888] px-3 md:px-4 py-1 md:py-2 items-center gap-1 cursor-pointer
+    text-sm md:text-base
+}
+.ShopCategorySort img {
+    @apply w-auto h-[7px] md:h-2 
+}
+.ShopCategoryProducts {
+    @apply grid grid-cols-2 md:grid-cols-4 mx-5 md:mx-33 my-5 md:my-7 gap-4 md:gap-10
+}
+.ShopCategoryLoadmore {
+    @apply flex cursor-pointer justify-center items-center my-15 mx-auto text-[#787878] bg-[#ededed] rounded-full h-10 md:h-15 w-35 md:w-50 text-sm md:text-base
+}

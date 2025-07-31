@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+.ProductDisplay {
+    @apply md:flex my-0 md:mx-30 
+}
+.ProductDisplayLeft {
+    @apply flex gap-4 justify-center max-w-full md:max-w-[550px] md:max-h-[525px] my-5 md:my-0 px-8 md:px-0
+} 
+.ProductDisplayImgList {
+    @apply hidden md:flex flex-col gap-4
+}
+.ProductDisplayImgList img {
+    @apply md:max-w-[100px]
+}
+.ProductDisplayImage {
+    @apply w-full md:w-[500px]
+}
+.ProductDisplayImage img {
+    @apply w-full h-full
+}
+.ProductDisplayRight {
+    @apply  my-0 mx-8 md:mx-13 flex flex-col gap-1 md:gap-4
+}
+.ProductDisplayRight h1 {
+    @apply text-[#3d3d3d] text-lg md:text-3xl font-bold 
+}
+.ProductDisplayRightStars {
+    @apply flex items-center md:mt-1 text-[#1c1c1c] gap-1 w-3.5 md:w-4
+}
+.ProductDisplayRightPrices {
+    @apply flex gap-3 md:gap-5 my-1 font-bold text-lg md:text-xl md:mt-3
+}
+.ProductDisplayRightPriceOld {
+    @apply text-[#818181] line-through 
+}
+.ProductDisplayRightPriceNew {
+    @apply text-[#ff4141]
+}
+.ProductDisplayRightDescription {
+    @apply text-sm mt-1 md:mt-2
+}
+.ProductDisplayRightSize h1{
+    @apply mt-2 md:mt-4 text-[#656565] text-base md:text-lg font-semibold
+}
+.ProductDisplayRightSizes {
+    @apply flex mt-4 md:mt-6 mx-0 gap-4.5 md:gap-5 text-sm
+}
+.ProductDisplayRightSizes div {
+    @apply bg-[#fbfbfb] border border-[#ebebeb] cursor-pointer px-3.5 md:px-5 py-2 md:py-4 rounded-sm
+}
+.ProductDisplayRight button {
+    @apply bg-[#ff4141] text-white flex w-40 justify-center py-3 my-4 md:my-1 text-[13px] md:text-sm font-semibold cursor-pointer
+}
+.ProductDisplayRightCategory {
+    @apply text-[14.5px] md:text-base
+}
+.ProductDisplayRightCategory span{
+    @apply font-semibold
+}

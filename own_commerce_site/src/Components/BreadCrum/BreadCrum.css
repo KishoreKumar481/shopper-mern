@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.BreadCrum {
+    @apply flex items-center text-[#5e5e5e] gap-2 font-semibold mx-5 my-3 md:mx-30 md:my-10 capitalize text-[12px] md:text-sm cursor-pointer
+}
+.BreadCrum img {
+    @apply w-1 md:w-2
+}
