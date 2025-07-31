@@ -3,10 +3,11 @@ import './ListProduct.css'
 import cross_icon from '../../assets/cross_icon.png'
 
 export default function ListProduct() {
+    const url = 'https://shopper-backend-ug5r.onrender.com'
     const [allproducts, setAllProducts] = useState([]);
 
     const fetchInfo = async () => {
-        await fetch('http://localhost:4000/allproducts')
+        await fetch(`${url}/allproducts`)
             .then((res) => res.json())
             .then((data) => { setAllProducts(data) })
     }
@@ -16,7 +17,7 @@ export default function ListProduct() {
     }, [])
 
     const remove_product = async(id) => {
-        await fetch('http://localhost:4000/removeproduct', {
+        await fetch(`${url}/removeproduct`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
