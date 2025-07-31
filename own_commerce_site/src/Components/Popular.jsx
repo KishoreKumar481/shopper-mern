@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Item from './Item.jsx';
 
 export default function Popular() {
+    const url = 'https://shopper-backend-ug5r.onrender.com'
     const [popularProducts, setPopularProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/popularinwomen')
+        fetch(`${url}/popularinwomen`)
             .then((res) => res.json())
             .then((data) => setPopularProducts(data))
     }, [])
