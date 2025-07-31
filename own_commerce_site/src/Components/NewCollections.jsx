@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Item from './Item.jsx';
 
 export default function NewCollections() {
+    const url = 'https://shopper-backend-ug5r.onrender.com'
     const [new_collections, setNew_collections] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:4000/newcollections')
+        fetch(`${url}/newcollections`)
             .then((res) => res.json())
             .then((data) => setNew_collections(data))
     }, [])
