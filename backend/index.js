@@ -9,6 +9,9 @@ const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
 
+const { v2: cloudinary } = require('cloudinary')
+const { CloudinaryStorage } = require('multer-storage-cloudinary')
+
 app.use(express.json());
 app.use(cors());
 
@@ -20,26 +23,33 @@ app.get('/', (req, res) => {
     res.send("Express app is running")
 })
 
-// Image Storage Engine
-const storage = multer.diskStorage({
-    destination: './upload/images',
-    filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+// Cloudinary config
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+})
+
+// Storage adapter
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: 'shopper_products', // optional folder in your Cloudinary media library
+        format: async(req, file) => file.mimetype.split('/')[1], // preserve extenstion
+        public_id: (req, file) => `product_${Date.now()}`, // unique name
+        transformation: [{ quality: "100"}],
     }
 })
 
-const upload = multer({storage: storage})
+const upload = multer({ storage })
 
 // Creating upload endpoint for images
-app.use('/images', express.static('upload/images'))
 app.post('/upload', upload.single('product'), (req, res) => {
-    const protocol = req.protocol; // http or https
-    const host = req.get('host') // localhost:4000 or render domain
-    const image_url = `${protocol}://${host}/images/${req.file.filename}`
-
+    // req.file.path is the secure URL on Cloudinary
     res.json({
         success: 1,
-        image_url
+        image_url: req.file.path,
+        public_id: req.file.filename, // Cloudinary public_id
     })
 })
 
