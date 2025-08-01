@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './CSS/Login.css';
 
 export default function Login() {
+    const url = 'https://shopper-backend-ug5r.onrender.com'
     const [state, setState] = useState('Login');
     const [formData, setFormData] = useState({
         username: '',
@@ -16,7 +17,7 @@ export default function Login() {
     const login = async() => {
         console.log("Login function executed", formData);
         let responseData;
-        await fetch('http://localhost:4000/login', {
+        await fetch(`${url}/login`, {
             method: 'POST',
             headers: {
                 Accept: 'application/form-data',
@@ -38,7 +39,7 @@ export default function Login() {
     const signup = async() => {
         console.log("Signup function executed", formData);
         let responseData;
-        await fetch('http://localhost:4000/signup', {
+        await fetch(`${url}/signup`, {
             method: 'POST',
             headers: {
                 Accept: 'application/form-data',
