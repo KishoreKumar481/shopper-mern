@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
     res.send("Express app is running")
 })
 
+app.get('/_health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Cloudinary config
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
